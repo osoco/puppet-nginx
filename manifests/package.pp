@@ -24,5 +24,8 @@ class nginx::package {
     opensuse,suse: {
 	  include nginx::package::suse
     }
+    gentoo: {
+          include nginx::package::gentoo
+    }
   }
 }
