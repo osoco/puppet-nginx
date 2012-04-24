@@ -15,7 +15,7 @@
 #    - RHEL: EPEL or custom package
 #    - Debian/Ubuntu: Default Install or custom package
 #    - SuSE: Default Install or custom package
-#    - Gentoo: Portage
+#    - Gentoo: Portage with USE support
 #
 # Sample Usage:
 #

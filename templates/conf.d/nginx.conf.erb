@@ -29,5 +29,9 @@ http {
   gzip_disable "MSIE [1-6]\.(?!.*SV1)";
   <% end %>
 
+  <% if scope.lookupvar('nginx::params::nx_ssi' == 'on') %>
+  ssi          on;
+  <% end %>
+
   include /etc/nginx/conf.d/*.conf;
 }

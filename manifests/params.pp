@@ -25,6 +25,7 @@ class nginx::params {
 	$nx_keepalive_timeout      = 65
 	$nx_tcp_nodelay            = on
 	$nx_gzip                   = on
+        $nx_ssi                    = off
 	
 	$nx_proxy_redirect             = off
 	$nx_proxy_set_header           = ['Host $host', 'X-Real-IP $remote_addr', 'X-Forwarded-For $proxy_add_x_forwarded_for']
@@ -46,7 +47,7 @@ class nginx::params {
 	}
 	
 	$nx_daemon_user = $operatingsystem ? {
-		/(?i-mx:debian|ubuntu)/                    => 'www-data',
-		/(?i-mx:fedora|rhel|centos|suse|opensuse)/ => 'nginx',
+		/(?i-mx:debian|ubuntu)/                           => 'www-data',
+		/(?i-mx:fedora|rhel|centos|suse|opensuse|Gentoo)/ => 'nginx',
 	}
 }

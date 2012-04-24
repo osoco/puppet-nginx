@@ -1,4 +1,6 @@
   location <%= location %> {
     proxy_pass <%= proxy %>;
+
+    <% unless (extra_config.empty?) %><%= extra_config %><% end %>
   }
 

@@ -13,6 +13,8 @@
 #   [*ssl*]         - Indicates whether to setup SSL bindings for this location.
 #   [*option*]      - Reserved for future use
 #
+#   [*extra_config*] - Additional configuration content to be added to the location block.
+#
 # Actions:
 #
 # Requires:
@@ -26,13 +28,14 @@
 #  }
 define nginx::resource::location( 
 	$ensure         = 'present',
-    $vhost          = undef,
-    $location,
+        $vhost          = undef,
+        $location,
 	$www_root       = undef,
 	$index_files    = ['index.html', 'index.htm', 'index.php'],
 	$proxy          = undef,
-	$ssl		    = 'false',
-    $option	        = undef
+	$ssl		= 'false',
+        $option	        = undef,
+        $extra_config   = ''
 ){
 	File { 
 		owner  => 'root', 
